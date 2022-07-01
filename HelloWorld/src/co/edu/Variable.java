@@ -23,6 +23,9 @@ public class Variable {
 		
 		//하이 2022.07.01 12:55z
 		System.out.println("이력변경추가.");
+		
+		//깃에서 수정한 작업
+		Sysyem.oout.println("깃수정.");
 	}
 
 }
