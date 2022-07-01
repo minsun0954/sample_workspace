@@ -28,6 +28,10 @@ public class Variable {
 		System.out.println("깃수정.");
 		
 		System.out.println("fdafasd.");
+	
+		System.out.println("fdafsdfsddsaasd.");
+	
+	
 	}
 
 }
