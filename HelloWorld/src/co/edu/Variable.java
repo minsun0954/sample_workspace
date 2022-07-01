@@ -21,7 +21,7 @@ public class Variable {
 		}
 		
 		
-		//하이 2022.07.01 12:55
+		//하이 2022.07.01 12:55z
 		System.out.println("이력변경추가.");
 	}
 
