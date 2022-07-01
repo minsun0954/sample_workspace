@@ -25,7 +25,9 @@ public class Variable {
 		System.out.println("이력변경추가.");
 		
 		//깃에서 수정한 작업
-		Sysyem.oout.println("깃수정.");
+		System.out.println("깃수정.");
+		
+		System.out.println("fdafasd.");
 	}
 
 }
