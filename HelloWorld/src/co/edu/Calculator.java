@@ -5,6 +5,5 @@ public class Calculator {
 		int result = 10 + 20;
 		System.out.println(result);
 	  
-		system.out.println(gk);
 	}
 }

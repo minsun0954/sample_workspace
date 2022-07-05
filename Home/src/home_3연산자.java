@@ -45,7 +45,7 @@ public class home_3연산자 {
 	Scanner scanner = new Scanner(System.in);
 	
 	System.out.println("첫번째 입력 수: "); 
-	double num3 = Double.parseDouble(scanner.nextLine());
+	 num3 = Double.parseDouble(scanner.nextLine());
 	
 	System.out.println("두번째 입력 수: ");
 	double num4 = Double.parseDouble(scanner.nextLine());
