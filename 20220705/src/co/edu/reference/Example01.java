@@ -14,7 +14,17 @@ public class Example01 {
 		}System.out.println(sum);
 		
 
-		
+		// while Math.random이용
+		// 2개의 주사위를 던졌을 때 나오는 눈을 눈1 눈2 출력
+		// 합이 5가 아니면 계속 던지고 합이 5면 멈추는 코드	
+		while(true) {
+			int num1 = (int)(Math.random()*6)+1;
+			int num2 = (int)(Math.random()*6)+1;
+			System.out.println(num1 + "," + num2);
+				if (num1 + num2 == 5) {
+				break;
+			}
+		}
 		
 		
 
