@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 /*
  *  등록 조회 수정 삭제 리스트 종료
+ *  id:user1 passwd: 1212 => 로그인되었습니다
+ *  					실패시 => 아이디와 비번을 확인하세요
  */
 public class BoardApp {
 	public static void main(String[] args) {
@@ -12,7 +14,34 @@ public class BoardApp {
 		Board[] boards = new Board[100];				// 공간이 100인 배열 null값
 		Scanner scanner = new Scanner(System.in);
 		
+		// 로그인 처리 기능.
+		
 		boolean run = true;
+		
+		String id = "user1";
+		String passwd = "1212";
+		
+		
+		while(run) { 
+			System.out.println("아이디를 입력하세요. ");
+			  String inputId = scanner.nextLine();
+			
+			System.out.println("비밀번호를 입력하세요. ");
+				String inputPasswd = scanner.nextLine();
+			
+			if( id.equals(inputId) && passwd.equals(inputPasswd)) {
+				
+				System.out.println("로그인되었습니다 ");
+				break;
+			}else  {
+				System.out.println("아이디와 비번을 확인하세요. ");
+			}
+				
+		}
+	
+		
+
+		
 		
 		while(run) {
 			System.out.println("1.등록 2.조회 3.수정 4.삭제 5.리스트 6.종료");
@@ -116,6 +145,17 @@ public class BoardApp {
 		
 		
 		
-	}
+		
+		
+		
+		
+		
+		
+		
+	}		
+	
+		
+}	
+		
+		
 
-}
