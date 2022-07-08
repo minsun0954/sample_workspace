@@ -1,8 +1,5 @@
-package co.edu.emp;
-/*
- * 사원정보 : 복합적인 데이터 유형
- *  사원번호 이름, 부서번호, 부서명, 급여, 이메일
- */
+package co.edu.interfaces.emp;
+
 public class Employee {
 	//필드
 	private int  employeeId; 		//사번
@@ -101,5 +98,4 @@ public class Employee {
 	}
 	
 	
-	
-}	
+}
