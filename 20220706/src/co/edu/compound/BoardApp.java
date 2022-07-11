@@ -12,7 +12,7 @@ public class BoardApp {
 	public static void main(String[] args) {
 		
 		Board[] boards = new Board[100];				// 공간이 100인 배열 null값
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);		// 
 		
 		// 로그인 처리 기능.
 		

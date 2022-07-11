@@ -1,7 +1,6 @@
 package co.edu.compound;
 
 import java.util.Date;
-
 /*
  * 게시글 한건의 정보
  */
