@@ -21,7 +21,7 @@ public class Student {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if(StudentNum.equals(getStudentNum))
+		
 		
 		
 		return super.equals(obj);
