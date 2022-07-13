@@ -20,13 +20,17 @@ public class BoardApp {
 			System.out.print("선택> ");
 			
 			Scanner scn = new Scanner(System.in);
-			int selectNum = scn.nextInt();
-		
+			int selectNum = scn.nextInt();scn.nextLine();		// nextInt() nextLine()		
+																// Integer.parseInt(scn.nextInt) 강제형변환 해줘도 됨 
 			if(selectNum == 1) {
-				app.boardList();
+				List<Board>list = app.boardList();
+				for(Board b:list) {
+					System.out.println(b.toString());
+				}
+				
 				
 			}else if(selectNum == 2){
-				List<Board> list = new ArrayList<Board>();
+				 
 				
 				System.out.println("작성자이름을 입력하세요. ");
 					String writer = scn.nextLine();
@@ -37,21 +41,23 @@ public class BoardApp {
 				System.out.println("내용을 입력하세요. ");
 					String content= scn.nextLine();
 				
-					list.add(new Board(writer,title,content));
+					app.add(new Board(writer,title,content));
 				
 					
 			}else if(selectNum == 3){
 				System.out.println("조회할 작성자를 입력하세요. ");
 				String writer= scn.nextLine();
 				
-				app.search(writer);
-		
+				List<Board>list = app.search(writer);				// 리턴타입이 List<Board>
+				for(Board b:list) {									// 목록 돌면서 toString출력 => Board에 오버로딩
+					System.out.println(b.toString());
+				}
 				
 			}else if(selectNum == 4){
 				System.out.println("삭제할 제목을 입력하세요. ");
 				String title = scn.nextLine();
 				
-				app.remove(title);
+				app.remove(title);									// 리턴타입이 없음 void
 				
 				
 			}else if(selectNum == 5) {
