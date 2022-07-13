@@ -44,10 +44,11 @@ public class Memo implements Serializable {				// Serializable 직렬화
 	}
 	
 	
-	@Override
+	@Override													// source - toString()
 	public String toString() {
-		return "no: " + no + " date: " + date + " content: " + content;
+		return "Memo [no=" + no + ", date=" + date + ", content=" + content + "]";
 	}
+	
 
 	
 	

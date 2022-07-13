@@ -1,9 +1,11 @@
 package co.edu.memo;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,8 +23,13 @@ public class MemoManager {
 	
 	// 싱글톤-인스턴스 만드는 방법
 	private static MemoManager instance = new MemoManager();		// 기본 생성자
-	private MemoManager() {}
-	public static MemoManager getInstance() {
+	private MemoManager() {
+		// 파일 정보 => Arraylist
+		readFromFile();
+	}
+	
+	
+	public static MemoManager getInstance(){
 		return instance;
 	}
 	
@@ -61,9 +68,9 @@ public class MemoManager {
 		System.out.println("삭제번호 입력> ");
 		int delNo = Integer.parseInt(scn.nextLine());		
 		
-		Iterator<Memo> iter = memoStorage.iterator();	// 반복자
+		Iterator<Memo> iter = memoStorage.iterator();	// 반복자 컬렉션에 저장되어있는 요소들을 읽어오는 방법을 표준화 
 		
-		while(iter.hasNext()) {
+		while(iter.hasNext()) {							// iter.hasNext 읽어올 요소가 남아있는거 있나 확인하느거
 			Memo memo = iter.next();
 			if(memo.getNo() == delNo);{
 				iter.remove();
@@ -78,11 +85,11 @@ public class MemoManager {
 	}
 	
 	//종료
-	public void storeToFile() {
+	public void storeToFile() {							// 종료하고 다시 검색하면 나옴! 저장되어있어서
 		try {
 			FileOutputStream fos = new FileOutputStream(file);
 			// 객체를 처리해주는 보조스트림 ObjectOutputStream : ArrayList => 바이트배열 변경.
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);	
 			
 			oos.writeObject(memoStorage);
 			oos.close();
@@ -92,7 +99,24 @@ public class MemoManager {
 			e.printStackTrace();
 		}
 		
-		
-		
 	}
+	
+	//파일읽어와서 컬렉션 타입으로 바꾸기
+	public void readFromFile() {
+		try {
+			FileInputStream fis = new FileInputStream(file);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			memoStorage = (List<Memo>) ois.readObject();
+			ois.close();
+			
+		} catch (IOException |ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
 }
