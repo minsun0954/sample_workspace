@@ -21,13 +21,7 @@ public class Student {
 	
 	@Override
 	public boolean equals(Object obj) {
-<<<<<<< HEAD
-	//	if(StudentNum.equals(getStudentNum))
-=======
-		
->>>>>>> branch 'master' of https://github.com/minsun0954/sample_workspace.git
-		
-		
+	
 		return super.equals(obj);
 	}
 	
